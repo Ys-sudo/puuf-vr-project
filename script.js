@@ -40,18 +40,18 @@ function resetBeers(){
 
 
              
-document.getElementsByClassName('beer')[0].setAttribute('position','6 6.5 65');
-document.getElementsByClassName('beer')[1].setAttribute('position','-16 6.5 65');
-document.getElementsByClassName('beer')[2].setAttribute('position','16 6.5 55');
-document.getElementsByClassName('beer')[3].setAttribute('position','-6 6.5 55');
-document.getElementsByClassName('beer')[4].setAttribute('position','-26 6.5 55');
+document.getElementsByClassName('beer')[0].setAttribute('position','6 6.4 65');
+document.getElementsByClassName('beer')[1].setAttribute('position','-16 6.4 65');
+document.getElementsByClassName('beer')[2].setAttribute('position','16 6.4 55');
+document.getElementsByClassName('beer')[3].setAttribute('position','-6 6.4 55');
+document.getElementsByClassName('beer')[4].setAttribute('position','-26 6.4 55');
 
 document.getElementsByClassName('beer')[5].setAttribute('position','16 1 95');
 document.getElementsByClassName('beer')[6].setAttribute('position','18 1 95');
 document.getElementsByClassName('beer')[7].setAttribute('position','20 1 95');
 
 document.getElementsByClassName('beer')[8].setAttribute('position','52 2.9 80');
-document.getElementsByClassName('beer')[9].setAttribute('position','26 6.5 65');
+document.getElementsByClassName('beer')[9].setAttribute('position','26 6.4 65');
 document.getElementsByClassName('beer')[10].setAttribute('position','-65 1 65');
 
 document.getElementsByClassName('beer')[11].setAttribute('position','-46.5 2.9 25');
@@ -61,31 +61,31 @@ document.getElementsByClassName('beer')[13].setAttribute('position','-48.5 2.5 8
 document.getElementsByClassName('beer')[14].setAttribute('position','-46.5 2.5 8');
 document.getElementsByClassName('beer')[15].setAttribute('position','-40.5 3.5 88.5');
 
-document.getElementsByClassName('beer')[16].setAttribute('position','-30.5 6 89');
+document.getElementsByClassName('beer')[16].setAttribute('position','-30.5 5.9 89');
 document.getElementsByClassName('beer')[17].setAttribute('position','-20.5 3.5 91.5');
 document.getElementsByClassName('beer')[18].setAttribute('position','-98 1 -87.78');
 
-document.getElementsByClassName('beer')[19].setAttribute('position','-18 6 -5.5');
+document.getElementsByClassName('beer')[19].setAttribute('position','-18 5.9 -5.5');
 document.getElementsByClassName('beer')[20].setAttribute('position','-23 3.5 -4.2');
 document.getElementsByClassName('beer')[21].setAttribute('position','18 3.5 -4.2');
 
 document.getElementsByClassName('beer')[22].setAttribute('position','23 3.5 -5.5');
-document.getElementsByClassName('beer')[23].setAttribute('position','16 6 0');
-document.getElementsByClassName('beer')[24].setAttribute('position','21 6 0');
+document.getElementsByClassName('beer')[23].setAttribute('position','16 5.9 0');
+document.getElementsByClassName('beer')[24].setAttribute('position','21 5.9 0');
 
 document.getElementsByClassName('beer')[25].setAttribute('position','0 1 33');
 document.getElementsByClassName('beer')[26].setAttribute('position','27 1 21');
-document.getElementsByClassName('beer')[27].setAttribute('position','69 6 -35');
+document.getElementsByClassName('beer')[27].setAttribute('position','69 5.9 -35');
 
-document.getElementsByClassName('beer')[28].setAttribute('position','74 7 -36');
-document.getElementsByClassName('beer')[29].setAttribute('position','72 5 -32 ');
+document.getElementsByClassName('beer')[28].setAttribute('position','74 6.9 -36');
+document.getElementsByClassName('beer')[29].setAttribute('position','72 4.9 -32 ');
 document.getElementsByClassName('beer')[30].setAttribute('position','20 35.5 -76');
 
 document.getElementsByClassName('beer')[31].setAttribute('position','40 45.5 -86');
-document.getElementsByClassName('beer')[32].setAttribute('position','55 5 39');
-document.getElementsByClassName('beer')[33].setAttribute('position','60 6 37');
+document.getElementsByClassName('beer')[32].setAttribute('position','55 4.9 39');
+document.getElementsByClassName('beer')[33].setAttribute('position','60 5.9 37');
 
-document.getElementsByClassName('beer')[34].setAttribute('position','65 7 35');
+document.getElementsByClassName('beer')[34].setAttribute('position','65 6.9 35');
 document.getElementsByClassName('beer')[35].setAttribute('position','72.2 2.25 60');
 document.getElementsByClassName('beer')[36].setAttribute('position','71 2.25 49');
 
@@ -207,7 +207,7 @@ document.getElementsByClassName('beer')[49].setAttribute('visible','true');
             //document.getElementById('timer').innerHTML = 'time: <br>' + time;
             
              
-            if ((time > 0) && (score!=5000)) {
+            if ((time > 0) && (score!=3000)) {
                
              var goGo =  setInterval(myTimer, 1000);
              
@@ -219,7 +219,7 @@ document.getElementsByClassName('beer')[49].setAttribute('visible','true');
 
         function myTimer() {
                 
-              if ((time > 0) && (score!=5000)) {
+              if ((time > 0) && (score!=3000)) {
                 time -= 1000;
                 document.getElementById('timer').innerHTML = 'time: <br>' + time/1000;
                 if (time===10000) {
@@ -229,7 +229,7 @@ document.getElementsByClassName('beer')[49].setAttribute('visible','true');
               } 
               
               
-              else if  ((time == 0) || (score==5000)){
+              else if  ((time == 0) || (score==3000)){
               console.log('timeout');
               clearInterval(goGo);
               gameplay = false;
@@ -247,7 +247,7 @@ document.getElementsByClassName('beer')[49].setAttribute('visible','true');
               document.getElementById('rig').setAttribute('position','0 6 100'); 
               
                 
-             if (score === 5000) {
+             if (score === 3000) {
                
                
                //you win
@@ -263,7 +263,7 @@ document.getElementsByClassName('beer')[49].setAttribute('visible','true');
                
                
                
-             } else if (score !== 5000) {
+             } else if (score !== 3000) {
                 
                 
                 //you loose
@@ -306,7 +306,7 @@ document.getElementsByClassName('beer')[49].setAttribute('visible','true');
             
             
             
-            if (score===5000){
+            if (score===3000){
           
               arr.push((score+(time/10))+'<br>');
             
