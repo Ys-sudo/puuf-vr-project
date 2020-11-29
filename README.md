@@ -15,11 +15,11 @@ The project uses the following components:
 - aframe-orbit-controls
 - aframe-physics-system
 
-A photo from the event: 
+Created for the PUUF company for a furniture expo in Copenhagen, Denmark in 2020.
 
 <img alt="webvr oculus touch aframe vr" src="https://cdn.glitch.com/976cf13a-2711-44df-94e9-88da116434d8%2F119097985_3504449992977622_7366144113638387028_n.jpg?v=1606666150401" width="200px" />
 
-Created for the PUUF company for a furniture expo in Copenhagen, Denmark in 2020.
+
 
 
 
