@@ -13,6 +13,7 @@ The project uses the following components:
 - aframe-htmlembed
 - aframe-auto-detect-controller
 - aframe-orbit-controls
+- aframe-physics-system
 
 A photo from the event: 
 
