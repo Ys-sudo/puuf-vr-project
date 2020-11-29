@@ -1,6 +1,6 @@
 # Puuf VR Project
 
-## Created with <a target="_blank" href="https://aframe.io">aframe.js</a>, javascript, html and css - a virtual reality game experience dedicated for occulus quest devices. 
+## Created with <a target="_blank" href="https://aframe.io">aframe.js</a>, javascript, html and css - a virtual reality game experience dedicated for occulus touch devices. 
 
 ### Availiable via browser <a target="_blank" href="https://puuf-vr-2.glitch.me"> under this link </a> -</a>  you can also find the <a target="_blank" href="https://glitch.com/edit/#!/puuf-vr-2">source code here</a> to prewiev/edit it.
 
