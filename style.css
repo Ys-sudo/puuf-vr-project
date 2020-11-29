@@ -1,16 +1,14 @@
-body{
+body {
   background-color: black;
 }
-      
-p{
-      color: white;
-      font-family: 'Fredoka One';
-  padding:10px;
-      
-    }
-#restartcontent:hover{
-  background: rgba(0,0,0,0.25);
+
+p {
+  color: white;
+  font-family: "Fredoka One";
   
+}
+#restartcontent:hover {
+  background: rgba(0, 0, 0, 0.25);
 }
 a {
   color: #edd9a4 !important;
@@ -19,6 +17,6 @@ a {
 a:hover {
   color: yellow !important;
 }
-p:hover{
+p:hover {
   color: #73d9a4;
 }
