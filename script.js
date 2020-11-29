@@ -17,20 +17,13 @@ var audio10sec = new Audio(
 var arr = [];
 var time;
 
+
+//fixes score duplicates bug
 function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
 }
 
-/*
 
-function audioInit() {
- setTimeout(() => {
-  document.getElementById('mySound').play();
-  document.getElementById('mySound').loop = true;
-}, 500)
-  
-}
-*/
 
 function resetBeers() {
   document
@@ -300,7 +293,7 @@ function restart(event) {
       document.getElementById("restart2").setAttribute("visible", "true");
       document.getElementById("restart2").setAttribute("position", "0 5 80");
 
-      document.getElementById("rig").setAttribute("position", "0 6 100");
+      document.getElementById("cam").setAttribute("position", "0 0 0");
 
       if (score === 3000) {
         //you win
@@ -312,7 +305,9 @@ function restart(event) {
           'You won! <br> <span style="color: yellow">Congratulations!</span><br><a>your score:</a> ' +
           (score + time / 10) +
           " <br> claim your reward from the team.";
-        document.getElementById("rig").setAttribute("position", "0 6 100");
+        
+        document.getElementById("cam").setAttribute("position", "0 0 0");
+        
         document.getElementById("score").innerHTML =
           "score: <br>" + (score + time / 10);
 
@@ -327,7 +322,7 @@ function restart(event) {
           '<span style="color:#73d9a4">Game Over</span><br> <a>your score was:  </a><br> ' +
           score +
           " <br> play again <br>";
-        document.getElementById("rig").setAttribute("position", "0 6 100");
+        document.getElementById("cam").setAttribute("position", "0 0 0");
         document.getElementById("score").innerHTML = "score: <br>" + score;
 
         audioLoose.play();
