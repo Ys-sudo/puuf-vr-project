@@ -1,10 +1,11 @@
 body {
-  background-color: black;
+  background-color: #111;
 }
 
 p {
   color: white;
   font-family: "Fredoka One";
+  padding: 10px;
   
 }
 #restartcontent:hover {
@@ -19,4 +20,5 @@ a:hover {
 }
 p:hover {
   color: #73d9a4;
+  
 }

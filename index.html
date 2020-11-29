@@ -12,28 +12,17 @@
       href="https://cdn.glitch.com/827e5e49-9c15-4838-90ce-0134932232e4%2Flogo.png?v=1583452202675"
     />
 
-    <!-- SETUP SCRIPTS -->
+    <!-- SETUP SCRIPTS: Aframe, env compontent, html embed -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 
     <script src="/aframe-enviroment-component.min.js"></script>
 
-    <script src="/GLTFloader.js"></script>
-
     <script src="/aframe-html-embed.js"></script>
 
-    <script src="https://threejsfundamentals.org/threejs/resources/threejs/r108/build/three.module.js"></script>
-
-    <script src="https://threejsfundamentals.org/threejs/resources/threejs/r108/examples/jsm/controls/OrbitControls.js"></script>
-
-    <script src="https://threejsfundamentals.org/threejs/resources/threejs/r108/examples/jsm/loaders/GLTFLoader.js"></script>
-
-    <script src="https://rawgit.com/fernandojsg/aframe-input-mapping-component/master/dist/aframe-input-mapping-component.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
 
     
 
-    <!-- scripting the interaction - setup score and clock -->
+    <!-- scripting the interaction - setup score and timing system -->
     <script src="/script.js"></script>
 
     <!-- CSS and fonts -->
@@ -86,11 +75,7 @@
           this.el.setAttribute('tracked-controls', 'controller', '0');
           this.el.setAttribute('tracked-controls', 'hand', this.data.hand); // although tracked-controls doesn't use this yet
 
-          if (this.controller.hand === 'left') {
-              el.addEventListener('xbuttondown', this.collect);
-            } else {
-              el.addEventListener('abuttondown', this.collect);
-        }
+        },
 
         injectVive: function () {
           this.injectedControls = true;
@@ -144,22 +129,10 @@
         src="https://cdn.glitch.com/976cf13a-2711-44df-94e9-88da116434d8%2FPuuf%20Intro%20Music.wav?v=1598990558066"
       ></audio>
 
-      <!-- basic settings light, camera, enviroment preset etc. 
-
-Enviroment Setup:
-
-Enviroments to choose:
-Valid values: none, default, contact, egypt, checkerboard, forest, 
-goaland, yavapai, goldmine, threetowers, poison, arches, tron, 
-japan, dream, volcano, starry, osiris
-
-grid: 2x2;
-seed="2"
--->
-
+     
       
 
-      <!-- <a-entity tracked-controls="controller: 0; idPrefix: OpenVR"></a-entity> -->
+      <!-- Controllers component-->
       
       <a-entity auto-detect-controllers></a-entity>
       
@@ -167,11 +140,11 @@ seed="2"
       
       <a-entity oculus-touch-controls="hand: right"></a-entity>
 
-      <!-- Default lighting injected by A-Frame. -->
+      <!-- Lighting setup injected by A-Frame. -->
       
       <a-entity
         onload="audioInit()"
-        light="type: hemisphere; color: #F6F6F6; intensity: 1; castShadow: true"
+        light="type: hemisphere; color: #F6F6F6; intensity: 1; "
       ></a-entity>
 
       <a-entity
@@ -184,19 +157,33 @@ seed="2"
         position="0 180 -30"
         visible=""
       ></a-entity>
+      
+       <!-- basic settings light, camera, enviroment preset etc. 
+
+      Enviroment Setup:
+
+      Enviroments to choose:
+      Valid values: none, default, contact, egypt, checkerboard, forest, 
+      goaland, yavapai, goldmine, threetowers, poison, arches, tron, 
+      japan, dream, volcano, starry, osiris
+
+      grid: 2x2;
+      seed="2"
+      -->
+
 
       <a-entity
-        environment="preset: forest;grid: 1x1;gridColor: #333; flatShading: true;  lighting: distant; groundColor:#111; shadowSize: 20;  ground:flat; groundTexture: walkernoise;  dressingAmount: 45;seed: 5;  dressing: trees;  groundColor2:#222; fog:0.7;"
-        shadow="cast: true; receive: true; type: pcfsoft"
+        environment="preset: forest;grid: 1x1; gridColor: #333; flatShading: true;  lighting: distant; groundColor:#111; shadowSize: 20;  ground:flat; groundTexture: walkernoise;  dressingAmount: 45; seed: 5;  dressing: trees;  groundColor2:#222; fog:0.7;"
+        shadow="cast: true; receive: true;"
         scale="1 1 1"
         visible="true"
       >
         <a-entity
           rotation="-90 0 0"
           class="environmentGround environment"
-          visible=""
+          visible="true"
           scale="2 2 4.18"
-          shadow="cast: true; receive: true"
+          shadow="receive: true"
         ></a-entity>
 
         <a-entity
@@ -234,7 +221,7 @@ seed="2"
                 id="timer"
               >
                 time: <br />
-                100
+                200
               </p>
             </a-entity>
 
@@ -260,7 +247,8 @@ seed="2"
           width="200"
           position="0 -100.05 0"
           shadow="cast: true; receive: true"
-          material="color:  #111;  alphaTest:  1;  flatShading:  true;  offset:  [object Object];  repeat:  [object Object];  shader:  flat;  vertexColors:  face;  src:  [object HTMLImageElement]"
+          color = "#111"
+          
         ></a-box>
 
         <a-entity
@@ -2001,7 +1989,7 @@ beers -->
           scale="2 2 2"
         >
           <img
-            src="data:image/png;base64,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"
+            src="https://cdn.glitch.com/827e5e49-9c15-4838-90ce-0134932232e4%2Flogo.png?v=1583452202675"
             width="2500px"
             class=""
           />
@@ -2099,9 +2087,9 @@ beers -->
         </audio>
       </a-entity>
       
-      <!--  loader -->
+      <!--  loader 
 
-      <div class="a-loader-title" style="display: none;"></div>
+      <div class="a-loader-title" style="display: none;"></div> -->
       
     </a-scene>
   </body>
