@@ -371,3 +371,7 @@ function collect(event) {
     audioCol.play();
   }
 }
+
+
+
+
